@@ -1,0 +1,21 @@
+### Create New Job
+POST http://localhost:8080/jobpost/ HTTP/1.1 
+content-type: application/json
+
+{
+    "id" : 17, 
+    "jobTitle" : "zwr", 
+    "jobDescription" : "xyz",
+    "location" : 98,
+    "industry" : "abc",
+    "qualification":"be",
+    "applicationRequirement":"a,b,c",
+    "postedDate":"2000-02-12",
+}
+
+### Get All Invoices
+GET http://localhost:8080/jobpost/
+
+### Delete Invoice By Id
+DELETE http://localhost:8080/jobpost/1
+

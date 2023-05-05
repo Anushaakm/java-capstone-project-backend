@@ -24,7 +24,7 @@ import lombok.AllArgsConstructor;
 public class UserController {
     
     private final UserService service;
-
+    @CrossOrigin
     @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity<AppResponse<Integer>> signup(@Valid @RequestBody CreateUserDto dto) {
         final Integer sts = service.signup(dto);
@@ -37,7 +37,7 @@ public class UserController {
 
         return ResponseEntity.ok().body(res);
     }
-
+    @CrossOrigin
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity<AppResponse<UserDto>> login(@Valid @RequestBody LoginDto dto) {
         final UserDto resDto = service.login(dto);

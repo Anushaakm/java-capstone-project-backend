@@ -3,6 +3,8 @@ package com.anu.capstone.service;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,7 @@ import com.anu.capstone.exception.UserNotFoundException;
 import com.anu.capstone.repository.UserRepository;
 
 import lombok.AllArgsConstructor;
-
+@Transactional
 @AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
