@@ -9,6 +9,7 @@ public interface JobPostingService {
     Integer createNewJob(JobpostingDto jobpostingDto);
     List<JobpostingDto> all();
     Integer deleteJobPost(Long id) throws JobNotFoundException;
+    JobpostingDto fetchJobDetails(Long id) throws JobNotFoundException;
     Integer updateJobPost(JobpostingDto jobpostingDto);
     
 }

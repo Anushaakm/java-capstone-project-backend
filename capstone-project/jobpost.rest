@@ -3,6 +3,7 @@ POST http://localhost:8080/jobpost/ HTTP/1.1
 content-type: application/json
 
 {
+    
     "jobTitle" : "zwr",
     "jobDescription" : "xyz",
     "location" : "98",
@@ -12,9 +13,26 @@ content-type: application/json
     "postedDate":"2000-02-12"
 }
 
-### Get All Invoices
+### Get All jOBS
 GET http://localhost:8080/jobpost/
 
-### Delete Invoice By Id
-DELETE http://localhost:8080/jobpost/51
+### Delete jobs By Id
+DELETE http://localhost:8080/jobpost/96
 
+### Invoice By Id
+GET http://localhost:8080/jobpost/77
+
+### Update Account
+
+PUT http://localhost:8080/jobpost/ HTTP/1.1 
+content-type: application/json
+
+{
+    "jobTitle" : "zwr",
+    "jobDescription" : "xyz",
+    "location" : "98",
+    "industry" : "xyz",
+    "qualification":"be",
+    "applicationRequirement":"w,x,y",
+    "postedDate":"2000-02-12"
+}

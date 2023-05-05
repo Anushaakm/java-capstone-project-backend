@@ -57,17 +57,29 @@ public class JobPostController {
 
     @CrossOrigin
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AppResponse<Integer>> deleteInvoice(@PathVariable Long id) {
+    public ResponseEntity<AppResponse<Integer>> deleteJobPost(@PathVariable Long id) {
 
         final Integer sts = service.deleteJobPost(id);
 
         final AppResponse<Integer> response = AppResponse.<Integer>builder()
                 .sts("success")
-                .msg("Invoice Deleted Successfully")
+                .msg("Job Deleted Successfully")
                 .bd(sts)
                 .build();
 
         return ResponseEntity.status(200).body(response);
+    }
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<AppResponse<JobpostingDto>> getInvoiceById(@PathVariable Long id) {
+
+        final JobpostingDto dto = service.fetchJobDetails(id);
+
+        final AppResponse<JobpostingDto> response = AppResponse.<JobpostingDto>builder()
+                                                        .sts("success")
+                                                        .msg("JonPost Details")
+                                                        .bd(dto)
+                                                        .build();
+        return ResponseEntity.ok().body(response);
     }
 
     @CrossOrigin
