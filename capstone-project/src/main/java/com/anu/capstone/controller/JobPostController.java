@@ -43,13 +43,13 @@ public class JobPostController {
 
     @CrossOrigin
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AppResponse<List<JobpostingDto>>> allInvoices() {
-        List<JobpostingDto> invoices = service.all();
+    public ResponseEntity<AppResponse<List<JobpostingDto>>> all() {
+        List<JobpostingDto> jobpostingDtos = service.all();
 
         AppResponse<List<JobpostingDto>> response = AppResponse.<List<JobpostingDto>>builder()
                 .sts("success")
-                .msg("Invoices")
-                .bd(invoices)
+                .msg("JobPost")
+                .bd(jobpostingDtos)
                 .build();
 
         return ResponseEntity.ok().body(response);
@@ -78,7 +78,7 @@ public class JobPostController {
 
         final AppResponse<Integer> response = AppResponse.<Integer>builder()
                 .sts("success")
-                .msg("Invoice Updated Successfully")
+                .msg("Job Updated Successfully")
                 .bd(sts)
                 .build();
 

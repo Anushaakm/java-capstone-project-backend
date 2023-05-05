@@ -10,26 +10,26 @@ public class JobPostMapper {
     public JobPosting toDomain(JobpostingDto jobpostingDto){
         return new JobPosting(
             jobpostingDto.getId(),
-            jobpostingDto.getApplicationRequirement(),
-            jobpostingDto.getIndustry(),
-            jobpostingDto.getJobDescription(),
             jobpostingDto.getJobTitle(),
+            jobpostingDto.getJobDescription(),
             jobpostingDto.getLocation(),
+            jobpostingDto.getIndustry(),
             jobpostingDto.getQualification(),
+            jobpostingDto.getApplicationRequirement(),
             jobpostingDto.getPostedDate()
             );
 
     }
     public JobpostingDto toDto(JobPosting domain){
         return new JobpostingDto(
-           domain.getId(),
-           domain.getApplicationRequirement(),
-           domain.getIndustry(),
-           domain.getJobDescription(),
-           domain.getJobTitle(),
-           domain.getLocation(),
-           domain.getQualification(),
-           domain.getPostedDate()
+            domain.getId(),
+            domain.getJobTitle(),
+            domain.getJobDescription(),
+            domain.getLocation(),
+            domain.getIndustry(),
+            domain.getQualification(),
+            domain.getApplicationRequirement(),
+            domain.getPostedDate()
             
             );
     }
