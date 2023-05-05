@@ -3,8 +3,8 @@ POST http://localhost:8080/user/ HTTP/1.1
 content-type: application/json
 
 {
-    "userName" : "abc", 
-    "password" : "abc123", 
+    "userName" : "siri", 
+    "password" : "12345", 
     "role" : "admin"
 }
 
@@ -13,6 +13,6 @@ POST http://localhost:8080/user/login HTTP/1.1
 content-type: application/json
 
 {
-    "userName" : "abdc", 
-    "password" : "abc123" 
+    "userName" : "siri", 
+    "password" : "12345" 
 }

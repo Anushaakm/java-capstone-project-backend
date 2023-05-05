@@ -23,7 +23,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long userId;
-
     @Column(unique = true, nullable = false)
     private String userName;
     @Column(nullable = false)
